@@ -1,0 +1,97 @@
+/* Mascote */
+#mascote {
+    width: 60px;   /* maior que antes */
+    height: auto;
+    vertical-align: middle; /* alinha com o texto */
+    margin: 0 10px;
+}
+
+/* Cabeçalho */
+.mundo {
+    display: flex;
+    justify-content: center;   /* centraliza horizontalmente */
+    align-items: center;       /* centraliza verticalmente */
+    background-color: #1E1E1E;
+    height: 120px;
+    width: 100%;
+}
+
+/* Texto do logo */
+.logo {
+    color: #fff;
+    font-size: 2.5rem;  /* aumenta o tamanho */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+body {
+    background: linear-gradient(to bottom, #1B13FB, #1409e0); 
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+
+    /* centralização do conteúdo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container do carrossel */
+.carrossel-container {
+    width: 60%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Linha do carrossel */
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Imagens */
+.carrossel img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+/* Botões */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* 🔹 Responsividade */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.8rem;
+    }
+    #mascote {
+        width: 40px;
+    }
+    .carrossel-container {
+        width: 90%;
+    }
+}
