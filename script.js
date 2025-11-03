@@ -16,7 +16,7 @@ function moveSlide(direction) {
 
   const maxIndex = Math.ceil(totalCards / visibleCards) - 1;
 
-  index = index + direction;
+  index += direction;
   if (index < 0) index = maxIndex;
   if (index > maxIndex) index = 0;
 
@@ -30,3 +30,9 @@ window.addEventListener('resize', () => {
   const offset = -index * (100 / visibleCards);
   carousel.style.transform = `translateX(${offset}%)`;
 });
+
+// Menu hamburger
+function toggleMenu() {
+  const navList = document.getElementById('nav-list');
+  navList.classList.toggle('active');
+}
