@@ -24,10 +24,9 @@ function moveSlide(direction) {
   carousel.style.transform = `translateX(${offset}%)`;
 }
 
-window.addEventListener('resize', () => moveSlide(0));
-
-// --- MENU HAMBURGER ---
-function toggleMenu() {
-  const navList = document.getElementById('nav-list');
-  navList.classList.toggle('active');
-}
+window.addEventListener('resize', () => {
+  const carousel = document.querySelector('.carrossel');
+  const visibleCards = getVisibleCards();
+  const offset = -index * (100 / visibleCards);
+  carousel.style.transform = `translateX(${offset}%)`;
+});

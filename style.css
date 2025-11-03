@@ -19,36 +19,32 @@ header {
   align-items: center;
   background: #205898;
   color: #fff;
-  padding: 15px 70px;
+  padding: 15px 5%;
+  flex-wrap: wrap;
 }
 
-header .logo span{
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
+header .logo span {
+    font-size: 1.5rem;
+  }
+
+
+header .logo {
   display: flex;
   align-items: center;
-  transform: translateY(-10px);
+  flex-wrap: wrap;
 }
 
-
-header .logo  {
-  display: flex;
-  align-items: center;
-}
-
-header .logo img {
-  height: 100px;
-  margin-right: 2px;
-  border-radius: 15px;
-}
+ header .logo img {
+    height: 70px;
+  }
 
 header nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  font-size: 20px;
-}
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #205898;
+    padding: 10px 0;
+  }
 
 header nav a {
   color: #fff;
@@ -124,7 +120,7 @@ p{
 
 /* Sessões */
 section {
-  padding: 50px;
+  padding: 50px 10%;
   text-align: center;
 }
 
@@ -147,6 +143,12 @@ section {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   padding: 20px;
 }
+
+  footer {
+    font-size: 14px;
+    padding: 10px;
+  }
+
 
 .card img {
   width: 100%;
@@ -182,6 +184,11 @@ form button:hover {
 
 }
 
+ form input, form textarea, form button {
+    font-size: 1rem;
+  }
+}
+
 /* Rodapé */
 footer {
   text-align: center;
@@ -197,11 +204,16 @@ footer {
   font-size: 2rem;
   cursor: pointer;
   color: #fff;
+  background: none;
+  border: none;
 }
 
 /* Mobile menu */
 @media (max-width: 768px) {
-  .hamburger { display: block; }
+  .hamburger {
+    display: block;
+  }
+}
 
   header nav {
     width: 100%;
@@ -216,6 +228,55 @@ footer {
   }
 
   header nav ul.active {
-    display: flex; /* mostra menu quando ativo */
+    display: flex;
+  }
+   header nav ul li {
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+  .card {
+    min-width: 45%;
   }
 }
+
+@media (max-width: 768px) {
+  .card {
+    min-width: 80%;
+  }
+
+    .btn {
+    font-size: 24px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card img {
+    height: 150px;
+  }
+  .card h3 {
+    font-size: 1rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 30px 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+@media (max-width: 480px) {
+  p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
