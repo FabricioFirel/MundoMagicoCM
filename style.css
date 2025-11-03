@@ -1,4 +1,4 @@
-
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +7,9 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #36d431, #21861e);
-  color: #333;
   
+  background: linear-gradient(to bottom, #36d431, #64e760);
+  color: #333;
 }
 
 /* Cabeçalho */
@@ -19,32 +19,35 @@ header {
   align-items: center;
   background: #205898;
   color: #fff;
-  padding: 15px 5%;
-  flex-wrap: wrap;
+  padding: 15px 70px;
 }
 
-header .logo {
+header .logo span{
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1.5rem;
-  font-weight: bold;
+  transform: translateY(-10px);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+
+header .logo  {
+  display: flex;
+  align-items: center;
 }
 
 header .logo img {
-  height: 70px;
+  height: 100px;
+  margin-right: 2px;
+  border-radius: 15px;
 }
 
 header nav ul {
   display: flex;
   gap: 20px;
   list-style: none;
+  font-size: 20px;
 }
 
 header nav a {
@@ -57,31 +60,14 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #fff;
-  background: none;
-  border: none;
-}
-
-
-section {
-   padding: 30px 5%;
-  max-width: 100%;
-}
-
-p {
+p{
   text-indent: 20px;
   font-size: 18px;
   text-align: left;
   margin-top: 10px;
-  line-height: 1.5;
 }
 
-
+/* Carrossel */
 .carrossel-container {
   position: relative;
   width: 100%;
@@ -94,18 +80,12 @@ p {
 .carrossel {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  flex-wrap: nowrap;
-  overflow-x: hidden
 }
 
 .card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  padding: 20px;
-  min-width: 25%;
-  margin: 0 10px;
+  min-width: 25%; /* 4 cards por vez */
   box-sizing: border-box;
+  padding: 10px;
 }
 
 .card img {
@@ -142,19 +122,38 @@ p {
 .next { right: 10px; }
 
 
+/* Sessões */
+section {
+  padding: 50px;
+  text-align: center;
+}
+
 .clientes-grid {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-.clientes-grid .card {
-  flex: 1 1 250px;
-  max-width: 300px;
+.grid-brinquedos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 20px;
+}
 
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Formulário */
 form {
   display: flex;
   flex-direction: column;
@@ -163,23 +162,24 @@ form {
   margin: auto;
 }
 
-form input, form textarea, form button {
-  width: 100%;
+form input, form textarea {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #aaa;
-  font-size: 1rem;
 }
 
 form button {
   background: #205898;
   color: white;
   border: none;
+  padding: 10px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 form button:hover {
-  background: #183c6b;
+  background: #205898;
+
 }
 
 /* Rodapé */
@@ -188,27 +188,34 @@ footer {
   background: #205898;
   color: #fff;
   padding: 15px;
-  font-size: 14px;
   margin-top: 30px;
 }
 
-/* ======== RESPONSIVIDADE ======== */
-@media (max-width: 1024px) { .card { min-width: 45%; } }
-
-@media (max-width: 768px) {
-  .hamburger { display: block; }
-  header nav ul { display: none; flex-direction: column; width: 100%; background: #205898; padding: 10px 0; }
-  header nav ul.active { display: flex; }
-  header nav ul li { text-align: center; }
-  section { padding: 30px 5%; }
-  .card { min-width: 80%; }
-  .btn { font-size: 24px; padding: 5px; }
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
 }
 
-@media (max-width: 480px) {
-  .card img { height: 150px; }
-  .card h3 { font-size: 1rem; }
-  .card p { font-size: 0.9rem; }
-  form { padding: 0 10px; }
-  p { font-size: 16px; line-height: 1.4; }
+/* Mobile menu */
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+
+  header nav {
+    width: 100%;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    display: none; /* esconde menu por padrão */
+    background: #205898;
+    padding: 10px 0;
+  }
+
+  header nav ul.active {
+    display: flex; /* mostra menu quando ativo */
+  }
 }

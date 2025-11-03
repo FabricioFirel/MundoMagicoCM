@@ -16,7 +16,7 @@ function moveSlide(direction) {
 
   const maxIndex = Math.ceil(totalCards / visibleCards) - 1;
 
-  index += direction;
+  index = index + direction;
   if (index < 0) index = maxIndex;
   if (index > maxIndex) index = 0;
 
@@ -24,14 +24,9 @@ function moveSlide(direction) {
   carousel.style.transform = `translateX(${offset}%)`;
 }
 
-window.addEventListener('resize', () => {
-  const carousel = document.querySelector('.carrossel');
-  const visibleCards = getVisibleCards();
-  const offset = -index * (100 / visibleCards);
-  carousel.style.transform = `translateX(${offset}%)`;
-});
+window.addEventListener('resize', () => moveSlide(0));
 
-// Menu hamburger
+// --- MENU HAMBURGER ---
 function toggleMenu() {
   const navList = document.getElementById('nav-list');
   navList.classList.toggle('active');
