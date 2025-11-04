@@ -1,33 +1,37 @@
-let index = 0;
+let index = 0; 
 
 function getVisibleCards() {
-  const width = window.innerWidth;
-  if (width <= 480) return 1;
-  if (width <= 768) return 2;
-  if (width <= 1024) return 3;
-  return 4;
+    const width = window.innerWidth;
+    if (width <= 480) return 1;
+    if (width <= 768) return 2;
+    if (width <= 1024) return 3;
+    return 4;
 }
 
 function moveSlide(direction) {
-  const carousel = document.querySelector('.carrossel');
-  const cards = document.querySelectorAll('.carrossel .card');
-  const totalCards = cards.length;
-  const visibleCards = getVisibleCards();
+    const carousel = document.querySelector('.carrossel');
+    const cards = document.querySelectorAll('.carrossel .card');
+    const totalCards = cards.length;
+    const visibleCards = getVisibleCards();
 
-  const maxIndex = Math.ceil(totalCards / visibleCards) - 1;
+    const CARD_WIDTH = 250; 
+    const CARD_GAP = 25;
+    const cardMoveDistance = CARD_WIDTH + CARD_GAP; 
 
-  index = index + direction;
-  if (index < 0) index = maxIndex;
-  if (index > maxIndex) index = 0;
+    const maxIndex = totalCards - visibleCards;
 
-  const offset = -index * (100 / visibleCards);
-  carousel.style.transform = `translateX(${offset}%)`;
+   
+    index = index + direction;
+    
+
+    if (index > maxIndex) {
+        index = 0; 
+    } else if (index < 0) {
+        index = maxIndex; 
+    }
+
+    const offset = -index * cardMoveDistance;
+
+    carousel.style.transform = `translateX(${offset}px)`;
 }
 
-window.addEventListener('resize', () => moveSlide(0));
-
-// --- MENU HAMBURGER ---
-function toggleMenu() {
-  const navList = document.getElementById('nav-list');
-  navList.classList.toggle('active');
-}

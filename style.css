@@ -43,6 +43,7 @@ header .logo img {
   border-radius: 15px;
 }
 
+
 header nav ul {
   display: flex;
   gap: 20px;
@@ -69,40 +70,55 @@ p{
 
 /* Carrossel */
 .carrossel-container {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  overflow: hidden;
-  padding: 20px 0;
+ overflow: hidden;
+  width: 90%; 
+  max-width: 1200px;
 }
 
 .carrossel {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  gap: 25px;
+  transition: transform 0.5s ease-in-out;
+  flex-wrap: nowrap;
 }
 
 .card {
-  min-width: 25%; /* 4 cards por vez */
-  box-sizing: border-box;
-  padding: 10px;
+ 
+ width: 250px; 
+ flex-shrink: 0;
+}
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card img {
-  width: 100%;
-  height: 180px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   object-fit: cover;
-  border-radius: 10px;
+  border: 4px solid #379149;
+  background: #379149;
+}
+
+.card h3, 
+.card p {
+  background: #379149; 
+  color: #181717;
+  margin: 0;
+  padding: 10px 15px;
+  text-align: center;
 }
 
 .card h3 {
-  margin: 10px 0 5px;
-  font-size: 16px;
+  font-size: 18px;
+  color: #151615;
+  margin-top: 10px;
 }
 
 .card p {
   font-size: 14px;
-  color: #555;
+  text-align: justify;
+  border-radius: 0 0 15px 15px;
 }
 
 .btn {
@@ -142,7 +158,7 @@ section {
 }
 
 .card {
-  background: #fff;
+  background: #205898; /* Cor de fundo dos blocos*/
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   padding: 20px;
@@ -150,7 +166,11 @@ section {
 
 .card img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 50px;
+  object-fit: cover;
+  border: 4px solid #379149;
+  background: #fff;
+  margin-bottom: 0;
 }
 
 /* Formulário */
@@ -199,23 +219,85 @@ footer {
   color: #fff;
 }
 
-/* Mobile menu */
+/* --- AJUSTES GERAIS PARA TABLET (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    /* Reduz o padding do cabeçalho */
+    header {
+        padding: 15px 40px;
+    }
+    
+    /* CARROSSEL: Garante que o container ocupe menos espaço */
+    .carrossel-container {
+        width: 95%;
+        max-width: 750px; /* Espaço para 3 cards + gaps */
+    }
+    
+    /* Cards (3 visíveis em JS): Mantém o tamanho de 250px, mas permite que o JS o ajuste */
+    .carrossel .card {
+        width: 230px; /* Reduz ligeiramente para garantir que 3 caibam */
+    }
+    
+    /* Depoimentos: Permite quebrar linha para telas menores */
+    .clientes-grid {
+        flex-wrap: wrap;
+    }
+}
+
+/* --- AJUSTES PARA CELULAR (max-width: 768px) --- */
 @media (max-width: 768px) {
-  .hamburger { display: block; }
+    /* Cabeçalho: Centraliza o logo e esconde o menu (via hamburger) */
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
 
-  header nav {
-    width: 100%;
-  }
+    header .logo {
+        /* Permite que o logo se ajuste melhor */
+        font-size: 1.5rem;
+    }
+    
+    /* CARROSSEL: Agora só cabem 2 cards ou 1 card */
+    .carrossel-container {
+        max-width: 500px; /* Espaço para 2 cards */
+    }
+    
+    /* Cards (2 visíveis em JS): Ajusta a largura */
+    .carrossel .card {
+        width: 220px; /* Ajuste para que 2 cards caibam com o gap de 25px */
+        
+        /* Ajuste do padding e border-radius para o bloco de cor */
+        padding: 10px;
+    }
+    
+    /* Depoimentos: Força os cards a ficarem em coluna */
+    .clientes-grid .card {
+        width: 80%;
+        max-width: 300px;
+        margin: 10px 0;
+    }
+}
 
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-    display: none; /* esconde menu por padrão */
-    background: #205898;
-    padding: 10px 0;
-  }
-
-  header nav ul.active {
-    display: flex; /* mostra menu quando ativo */
-  }
+/* --- AJUSTES FINOS PARA CELULAR PEQUENO (max-width: 480px) --- */
+@media (max-width: 480px) {
+    /* Esconde o span do logo para economizar espaço */
+    header .logo span {
+        font-size: 2rem;
+    }
+    
+    /* CARROSSEL: Apenas 1 card visível */
+    .carrossel-container {
+        width: 90%;
+        max-width: 300px; /* Largura perfeita para 1 card */
+    }
+    
+    /* Cards (1 visível em JS): Ocupa quase toda a largura */
+    .carrossel .card {
+        width: 275px; /* Largura total do container - gap */
+    }
+    
+    /* Seções: Reduz o padding geral */
+    section {
+        padding: 30px 10px;
+    }
 }
