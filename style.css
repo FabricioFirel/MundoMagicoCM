@@ -47,10 +47,47 @@ header nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.3rem; /* 🔹 aumenta o tamanho do texto do menu */
+  transition: color 0.3s ease;
+  display: inline-block;
 }
 
 header nav a:hover {
-  text-decoration: underline;
+  transform: scale(1.15);
+  color: #379149;
+  text-shadow: 0 0 8px #205898;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column; /* um abaixo do outro */
+  align-items: center; /* centraliza os itens */
+  gap: 15px;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+form input, 
+form textarea, 
+form button {
+  width: 100%; /* ocupa toda a largura do form */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  font-size: 16px;
+}
+
+form button {
+  background: #205898;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #1a4373;
 }
 
 /* SEÇÕES GERAIS */
@@ -166,6 +203,50 @@ section {
   margin-bottom: 10px;
 }
 
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* evita scroll lateral */
+}
+
+.carrossel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* centraliza em telas grandes */
+  padding: 0 10px; /* pequeno respiro interno, sem deixar folga */
+}
+
+.carrossel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Botões alinhados dentro da área visível */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.prev { left: 5px; }
+.next { right: 5px; }
+
 /* RESPONSIVIDADE */
 @media (max-width: 1200px) {
   .carrossel .card { width: calc((100% - 25px * 3) / 4); } /* 4 cards */
@@ -179,6 +260,81 @@ section {
   .carrossel .card { width: calc((100% - 25px * 1) / 2); } /* 2 cards */
 }
 
+ .hamburger {
+    display: block; /* aparece apenas no mobile */
+  }
+
+   header nav ul {
+    display: none; /* esconde o menu normal */
+  }
+
+  header nav ul.active {
+    display: flex; /* mostra o menu quando clicado */
+    flex-direction: column;
+    background-color: #205898;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
 @media (max-width: 480px) {
-  .carrossel .card { width: 100%; } /* 1 card */
+  section {
+    padding: 30px 10px;
+  }
+
+  .carrossel .card {
+    width: 100%;
+  }
+
+  .carrossel .card img {
+    height: 160px;
+  }
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* mostra o ícone */
+  }
+
+  header nav ul {
+    display: none; /* esconde o menu padrão */
+    flex-direction: column;
+    background-color: #205898;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    gap: 15px;
+    text-align: center;
+  }
+
+  header nav ul.active {
+    display: flex; /* mostra o menu quando clicado */
+  }
+}
+
+/* --- DESKTOP --- */
+@media (min-width: 769px) {
+  header nav ul {
+    display: flex; /* mantém o menu visível */
+    position: static;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .hamburger {
+    display: none; /* esconde o ícone no desktop */
+  }
 }
