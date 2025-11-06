@@ -1,140 +1,122 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mundo Mágico CM</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundo Mágico CM</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header>
-    <div class="logo">
-      <span>Mundo</span>
-      <img src="src/img/mundomagicomascote.png" alt="Logo Mundo Mágico">
-      <span>Mágico CM</span>
-      
+    <header>
+    <div class="logo">
+      <span>Mundo</span>
+      <img src="src/img/mundomagicomascote.png" alt="Logo Mundo Mágico">
+      <span>Mágico CM</span>
+      
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+    &#9776;
+  </div>
+
+    <nav>
+      <ul id="nav-list">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#brinquedos">Brinquedos</a></li>
+         <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#orcamento">Orçamento</a></li>
+      </ul>
+    </nav>
+  </header>
+     <section id="inicio">
+    <h2>Bem vindo ao nosso mundo mágico</h2>
+    <p> Desde 2018 transformando momentos em memórias inesquecíveis. Somos apaixonados por levar alegria e sorrisos a cada criança, celebrando a vida com experiências únicas, seguras e cheia de diversão. Nossa missão é tornar cada festa ainda mais especial, garantindo a alegria dos pequenos e a tranquilidade dos pais.
+    </p>
+    
+      
+  </section>
+
+  
+  <section id="brinquedos"> 
+  <h2>Brinquedos</h2>
+  
+  <div class="carrossel-wrapper">  
+    <div class="carrossel-container">
+        <div class="carrossel">
+  
+    <div class="card"><img src="src/img/airgame.jpg"><h3>Air Game</h3><p>O Air Game é pura diversão e desafio! Uma mesa de aero hockei interativa, onde dois jogadores disputam quem marca mais pontos. Ideal para animar festas e garantir muitas risadas com segurança.</p></div>
+    <div class="card"><img src="src/img/alpinismo.jpg"><h3>Alpinismo</h3><p>O Alpinismo Inflável é diversão radical para a garotada! Com cores vibrantes e total segurança, as crianças podem escalar e viver a sensação de uma verdadeira aventura. Um brinquedo que garante desafio, emoção e muitas risadas em qualquer festa ou evento.</p></div>
+    <div class="card"><img src="src/img/bolao.jpg"><h3>Bolão</h3><p>O Bolão Inflável é pura energia e diversão! Colorido e gigante, ele garante muitas risadas enquanto as crianças correm, chutam e brincam sem parar. Uma atração segura, interativa e perfeita para animar qualquer festa ou evento.</p></div>
+    <div class="card"><img src="src/img/camaelastica.jpg"><h3>Cama Elástica</h3><p>A Cama Elástica é a atração que não pode faltar em uma festa! Diversão garantida com segurança, onde as crianças podem pular, gastar energia e se divertir sem parar. Um brinquedo que faz a alegria dos pequenos e deixa qualquer evento ainda mais animado.</p></div>
+    <div class="card"><img src="src/img/camaelastica244.jpg"><h3>Cama Elástica 244</h3><p>A Cama Elástica é a atração que não pode faltar em uma festa! Diversão garantida com segurança, onde as crianças podem pular, gastar energia e se divertir sem parar. Um brinquedo que faz a alegria dos pequenos e deixa qualquer evento ainda mais animado.</p></div>
+    <div class="card"><img src="src/img/camaelastica366.jpg"><h3>Cama Elástica 366</h3><p>A Cama Elástica é a atração que não pode faltar em uma festa! Diversão garantida com segurança, onde as crianças podem pular, gastar energia e se divertir sem parar. Um brinquedo que faz a alegria dos pequenos e deixa qualquer evento ainda mais animado.</p></div>
+    <div class="card"><img src="src/img/castelo.jpg"><h3>Castelo</h3><p>O Castelo Inflável transforma a festa em um verdadeiro reino de diversão! Colorido, seguro e super animado, ele garante momentos de pura alegria enquanto as crianças pulam e brincam como verdadeiros príncipes e princesas.</p></div>
+    <div class="card"><img src="src/img/chuteaogol.jpg"><h3>Chute ao Gol</h3><p>O Chute ao Gol é um brinquedo inflável que garante diversão e desafios para todas as idades. Nele, os participantes testam sua pontaria chutando a bola em direção aos alvos posicionados no painel do gol.</p></div>
+    <div class="card"><img src="src/img/fliperama.jpg"><h3>Fliperama</h3><p>🎮 Diversão garantida para todas as idades! Leve o Fliperama do Mundo Mágico para o seu evento e reviva os clássicos com muitos jogos, competição e risadas! 🕹️</p></div>
+    <div class="card"><img src="src/img/futebolsabao.jpg"><h3>Futebol de Sabão</h3><p>⚽💦 Diversão e adrenalina garantidas! Com o Futebol de Sabão do Mundo Mágico, a brincadeira fica ainda mais emocionante! Escorregue, ria e dispute partidas cheias de diversão e muita bagunça boa!😄</p></div>
+    <div class="card"><img src="src/img/guerracontonete.jpg"><h3>Guerra de Contonete</h3><p>A Guerra de Cotonete Inflável é pura diversão e desafio! Dois participantes duelam em uma base inflável usando cotonetes gigantes, testando equilíbrio, força e resistência. Ideal para competições animadas em festas e eventos.</p></div>
+    <div class="card"><img src="src/img/jogoargolas.jpg"><h3>Jopgo de Argolas</h3><p>Um clássico que nunca sai de moda! As crianças se divertem tentando acertar as argolas no alvo, estimulando a coordenação motora e a concentração.</p></div>
+    <div class="card"><img src="src/img/kidplaypiupiu.jpg"><h3>Kid Play Piu-Piu e Frajola</h3><p>Um espaço inflável cheio de cores, desafios e muita diversão! Com escorregador, obstáculos e personagens que as crianças adoram, o Kid Play garante horas de alegria e imaginação</p></div>
+    <div class="card"><img src="src/img/minikidplay.jpg"><h3>Mini Kid Play</h3><p>Um espaço inflável cheio de cores e desafios, feito sob medida para os pequenos! Seguro, divertido e perfeito para garantir a alegria das crianças menores.</p></div>
+    <div class="card"><img src="src/img/minisinuca.jpg"><h3>Mini Sinuca</h3><p>🎱 Diversão em miniatura! A Sinuquinha do Mundo Mágico é perfeita para as crianças se sentirem verdadeiros campeões de sinuca! Colorida, segura e super divertida, essa atração faz sucesso em qualquer festa! 😄✨</p></div>
+    <div class="card"><img src="src/img/minitobogajacare.jpg"><h3>Mini Tobogâ Jacaré</h3><p>🐊 Diversão que escorrega de alegria! O Mini Tobogã Jacaré do Mundo Mágico é sucesso entre as crianças! Colorido, seguro e cheio de emoção, ele garante muitas risadas e momentos inesquecíveis! 🎉💚</p></div>
+    <div class="card"><img src="src/img/multplaytigrinho.jpg"><h3>Mul Play Tigrinho</h3><p>🐯 Aventura e diversão em um só brinquedo! O Mult Play Tigrinho do Mundo Mágico combina escorregador, obstáculos e muita animação! As crianças adoram brincar e gastar energia nesse espaço cheio de cores e alegria! 🎉💛</p></div>
+    <div class="card"><img src="src/img/pingpong.jpg"><h3>Ping-Pong</h3><p>🏓 Diversão e desafios para todas as idades! Com a mesa de Ping Pong do Mundo Mágico, a brincadeira é garantida! Reúna amigos e família para partidas cheias de risadas, reflexos e muita competição saudável! 😄🎉</p></div>
+    <div class="card"><img src="src/img/piscinabolinhaleao.jpg"><h3>Piscina de Bolinha Leão</h3><p>🦁 Diversão com o rei da selva! A Piscina de Bolinhas Leão Inflável do Mundo Mágico encanta as crianças com suas cores vibrantes e formato divertido! Um espaço seguro e alegre para pular, mergulhar e brincar sem parar! 🎉🎈</p></div>
+    <div class="card"><img src="src/img/piscinabolinhatrad.jpg"><h3>Cama Elástica</h3><p>Pequena descrição</p></div>
+    <div class="card"><img src="src/img/pulapula.jpg"><h3>Pula-Pula</h3><p>🤸‍♂️ Pura energia e diversão! O Mini Pula-Pula Inflável do Mundo Mágico é perfeito para os pequenos se divertirem com segurança! Colorido e cheio de alegria, garante risadas do início ao fim da festa! 😄🎈</p></div>
+    <div class="card"><img src="src/img/tamancobol.jpg"><h3>Cama Elástica 366</h3><p>Pequena descrição</p></div>
+    <div class="card"><img src="src/img/toboagua.jpg"><h3>Toboágua</h3><p>💦 A diversão mais refrescante da festa! O Toboágua do Mundo Mágico é sucesso garantido nos dias de calor! As crianças adoram escorregar, se molhar e curtir essa aventura cheia de risadas e emoção! 🌞🎉</p></div>
+    <div class="card"><img src="src/img/tobogapiscina.jpg"><h3>Tobogâ Piscina</h3><p>🎢🎈 Diversão em dobro! O Mini Tobogã com Piscina de Bolinhas do Mundo Mágico une o melhor dos dois mundos: escorregar e mergulhar em um mar de bolinhas coloridas! Diversão garantida para os pequenos! 😍💦</p></div>
+    <div class="card"><img src="src/img/tobogapremium.jpg"><h3>Tobogâ Premium</h3><p>🎉 Diversão em grande estilo! O Tobogã Premium do Mundo Mágico é gigante, colorido e cheio de emoção! Ideal para garantir muita aventura, risadas e momentos inesquecíveis em qualquer festa! 💥😄</p></div>
+    <div class="card"><img src="src/img/tombolegal.jpg"><h3>Tombo Legal</h3><p>🤪 Quem será o próximo a cair? O Tombo Legal do Mundo Mágico é pura diversão e gargalhada! Desafie os amigos, teste o equilíbrio e se prepare para rolar de rir com essa brincadeira super animada! 🎯🎉</p></div>
+    <div class="card"><img src="src/img/toto.jpg"><h3>Totó</h3><p>⚽ Diversão clássica que nunca sai de moda! O Pebolim do Mundo Mágico garante partidas cheias de risadas e muita disputa saudável entre amigos e família. Um sucesso em qualquer festa ou evento!</p></div>
+  
+    </div>
     </div>
-
-    <div class="hamburger" onclick="toggleMenu()">
-    &#9776;
-  </div>
-
-    <nav>
-      <ul id="nav-list">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#brinquedos">Brinquedos</a></li>
-         <li><a href="#depoimentos">Depoimentos</a></li>
-        <li><a href="#orcamento">Orçamento</a></li>
-      </ul>
-    </nav>
-  </header>
-  <!-- Inicio -->
-   <section id="inicio">
-    <h2>Bem vindo ao nosso mundo mágico</h2>
-    <p> Desde 2018 transformando momentos em memórias inesquecíveis. Somos apaixonados por levar alegria e sorrisos a cada criança, celebrando a vida com experiências únicas, seguras e cheia de diversão. Nossa missão é tornar cada festa ainda mais especial, garantindo a alegria dos pequenos e a tranquilidade dos pais.
-    </p>
-    
-      
-  </section>
-
-  
-
-  <!-- Brinquedos -->
-<section id="brinquedos" class="carrossel-container">
-  <div class="carrossel">
-    <div class="card"><img src="src/img/airgame.jpg"><h3>Air Game</h3><p>O Air Game é pura diversão e desafio! Uma mesa de aero hockei interativa, onde dois jogadores disputam quem marca mais pontos. Ideal para animar festas e garantir muitas risadas com segurança.</p></div>
-    <div class="card"><img src="src/img/alpinismo.jpg"><h3>Alpinismo</h3><p>O Alpinismo Inflável é diversão radical para a garotada! Com cores vibrantes e total segurança, as crianças podem escalar e viver a sensação de uma verdadeira aventura. Um brinquedo que garante desafio, emoção e muitas risadas em qualquer festa ou evento.</p></div>
-    <div class="card"><img src="src/img/bolao.jpg"><h3>Bolão</h3><p>O Bolão Inflável é pura energia e diversão! Colorido e gigante, ele garante muitas risadas enquanto as crianças correm, chutam e brincam sem parar. Uma atração segura, interativa e perfeita para animar qualquer festa ou evento.</p></div>
-    <div class="card"><img src="src/img/camaelastica.jpg"><h3>Cama Elástica</h3><p>A Cama Elástica é a atração que não pode faltar em uma festa! Diversão garantida com segurança, onde as crianças podem pular, gastar energia e se divertir sem parar. Um brinquedo que faz a alegria dos pequenos e deixa qualquer evento ainda mais animado.</p></div>
-    <div class="card"><img src="src/img/camaelastica244.jpg"><h3>Cama Elástica 244</h3><p>A Cama Elástica é a atração que não pode faltar em uma festa! Diversão garantida com segurança, onde as crianças podem pular, gastar energia e se divertir sem parar. Um brinquedo que faz a alegria dos pequenos e deixa qualquer evento ainda mais animado.</p></div>
-    <div class="card"><img src="src/img/camaelastica366.jpg"><h3>Cama Elástica 366</h3><p>A Cama Elástica é a atração que não pode faltar em uma festa! Diversão garantida com segurança, onde as crianças podem pular, gastar energia e se divertir sem parar. Um brinquedo que faz a alegria dos pequenos e deixa qualquer evento ainda mais animado.</p></div>
-    <div class="card"><img src="src/img/castelo.jpg"><h3>Castelo</h3><p>O Castelo Inflável transforma a festa em um verdadeiro reino de diversão! Colorido, seguro e super animado, ele garante momentos de pura alegria enquanto as crianças pulam e brincam como verdadeiros príncipes e princesas.</p></div>
-    <div class="card"><img src="src/img/chuteaogol.jpg"><h3>Chute ao Gol</h3><p>O Chute ao Gol é um brinquedo inflável que garante diversão e desafios para todas as idades. Nele, os participantes testam sua pontaria chutando a bola em direção aos alvos posicionados no painel do gol.</p></div>
-    <div class="card"><img src="src/img/fliperama.jpg"><h3>Fliperama</h3><p>🎮 Diversão garantida para todas as idades!
-Leve o Fliperama do Mundo Mágico para o seu evento e reviva os clássicos com muitos jogos, competição e risadas! 🕹️</p></div>
-    <div class="card"><img src="src/img/futebolsabao.jpg"><h3>Futebol de Sabão</h3><p>⚽💦 Diversão e adrenalina garantidas!
-Com o Futebol de Sabão do Mundo Mágico, a brincadeira fica ainda mais emocionante! Escorregue, ria e dispute partidas cheias de diversão e muita bagunça boa!😄</p></div>
-    <div class="card"><img src="src/img/guerracontonete.jpg"><h3>Guerra de Contonete</h3><p>A Guerra de Cotonete Inflável é pura diversão e desafio! Dois participantes duelam em uma base inflável usando cotonetes gigantes, testando equilíbrio, força e resistência. Ideal para competições animadas em festas e eventos.</p></div>
-    <div class="card"><img src="src/img/jogoargolas.jpg"><h3>Jopgo de Argolas</h3><p>Um clássico que nunca sai de moda!
-As crianças se divertem tentando acertar as argolas no alvo, estimulando a coordenação motora e a concentração.</p></div>
-    <div class="card"><img src="src/img/kidplaypiupiu.jpg"><h3>Kid Play Piu-Piu e Frajola</h3><p>Um espaço inflável cheio de cores, desafios e muita diversão!
-Com escorregador, obstáculos e personagens que as crianças adoram, o Kid Play garante horas de alegria e imaginação</p></div>
-    <div class="card"><img src="src/img/minikidplay.jpg"><h3>Mini Kid Play</h3><p>Um espaço inflável cheio de cores e desafios, feito sob medida para os pequenos!
-Seguro, divertido e perfeito para garantir a alegria das crianças menores.</p></div>
-    <div class="card"><img src="src/img/minisinuca.jpg"><h3>Mini Sinuca</h3><p>🎱 Diversão em miniatura!
-A Sinuquinha do Mundo Mágico é perfeita para as crianças se sentirem verdadeiros campeões de sinuca!
-Colorida, segura e super divertida, essa atração faz sucesso em qualquer festa! 😄✨</p></div>
-    <div class="card"><img src="src/img/minitobogajacare.jpg"><h3>Mini Tobogâ Jacaré</h3><p>🐊 Diversão que escorrega de alegria!
-O Mini Tobogã Jacaré do Mundo Mágico é sucesso entre as crianças! Colorido, seguro e cheio de emoção, ele garante muitas risadas e momentos inesquecíveis! 🎉💚</p></div>
-    <div class="card"><img src="src/img/multplaytigrinho.jpg"><h3>Mul Play Tigrinho</h3><p>🐯 Aventura e diversão em um só brinquedo!
-O Mult Play Tigrinho do Mundo Mágico combina escorregador, obstáculos e muita animação! As crianças adoram brincar e gastar energia nesse espaço cheio de cores e alegria! 🎉💛</p></div>
-    <div class="card"><img src="src/img/pingpong.jpg"><h3>Ping-Pong</h3><p>🏓 Diversão e desafios para todas as idades!
-Com a mesa de Ping Pong do Mundo Mágico, a brincadeira é garantida! Reúna amigos e família para partidas cheias de risadas, reflexos e muita competição saudável! 😄🎉</p></div>
-    <div class="card"><img src="src/img/piscinabolinhaleao.jpg"><h3>Piscina de Bolinha Leão</h3><p>🦁 Diversão com o rei da selva!
-A Piscina de Bolinhas Leão Inflável do Mundo Mágico encanta as crianças com suas cores vibrantes e formato divertido! Um espaço seguro e alegre para pular, mergulhar e brincar sem parar! 🎉🎈</p></div>
-    <div class="card"><img src="src/img/piscinabolinhatrad.jpg"><h3>Cama Elástica</h3><p>Pequena descrição</p></div>
-    <div class="card"><img src="src/img/pulapula.jpg"><h3>Pula-Pula</h3><p>🤸‍♂️ Pura energia e diversão!
-O Mini Pula-Pula Inflável do Mundo Mágico é perfeito para os pequenos se divertirem com segurança! Colorido e cheio de alegria, garante risadas do início ao fim da festa! 😄🎈</p></div>
-    <div class="card"><img src="src/img/tamancobol.jpg"><h3>Cama Elástica 366</h3><p>Pequena descrição</p></div>
-    <div class="card"><img src="src/img/toboagua.jpg"><h3>Toboágua</h3><p>💦 A diversão mais refrescante da festa!
-O Toboágua do Mundo Mágico é sucesso garantido nos dias de calor! As crianças adoram escorregar, se molhar e curtir essa aventura cheia de risadas e emoção! 🌞🎉</p></div>
-    <div class="card"><img src="src/img/tobogapiscina.jpg"><h3>Tobogâ Piscina</h3><p>🎢🎈 Diversão em dobro!
-O Mini Tobogã com Piscina de Bolinhas do Mundo Mágico une o melhor dos dois mundos: escorregar e mergulhar em um mar de bolinhas coloridas! Diversão garantida para os pequenos! 😍💦</p></div>
-    <div class="card"><img src="src/img/tobogapremium.jpg"><h3>Tobogâ Premium</h3><p>🎉 Diversão em grande estilo!
-O Tobogã Premium do Mundo Mágico é gigante, colorido e cheio de emoção! Ideal para garantir muita aventura, risadas e momentos inesquecíveis em qualquer festa! 💥😄</p></div>
-    <div class="card"><img src="src/img/tombolegal.jpg"><h3>Tombo Legal</h3><p>🤪 Quem será o próximo a cair?
-O Tombo Legal do Mundo Mágico é pura diversão e gargalhada! Desafie os amigos, teste o equilíbrio e se prepare para rolar de rir com essa brincadeira super animada! 🎯🎉</p></div>
-    <div class="card"><img src="src/img/toto.jpg"><h3>Totó</h3><p>⚽ Diversão clássica que nunca sai de moda!
-O Pebolim do Mundo Mágico garante partidas cheias de risadas e muita disputa saudável entre amigos e família. Um sucesso em qualquer festa ou evento!</p></div>
-  
-  </div>
-  <button class="btn prev" onclick="moveSlide(-1)">&#10094;</button>
-  <button class="btn next" onclick="moveSlide(1)">&#10095;</button>
+        <button class="btn prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="btn next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
 </section>
 
-  <!-- Clientes -->
-  <section id="depoimentos">
-    <h2>O que nossos clientes dizem do nosso mundo mágico</h2>
-    <p>Confira a opinião de quem já viveu essa experiência mágica com a gente.</p>
-    <div class="clientes-grid">
-    <div class="card">
-      <img src="src/img/cliente1.jpg" alt="Cliente 1">
-      <h3>Maria Silva</h3>
-      <p>“Foi uma festa inesquecível, meus filhos amaram cada brinquedo!”</p>
-    </div>
-    
-    <div class="card">
-      <img src="src/img/cliente2.jpg" alt="Cliente 2">
-      <h3>João Pereira</h3>
-      <p>“Equipe super atenciosa e brinquedos de excelente qualidade.”</p>
-    </div>
-    
-    <div class="card">
-      <img src="src/img/cliente3.jpg" alt="Cliente 3">
-      <h3>Ana Souza</h3>
-      <p>“Segurança e diversão garantida, recomendo de olhos fechados.”</p>
-    </div>
-  </div>
-  </section>
+    <section id="depoimentos">
+    <h2>O que nossos clientes dizem do nosso mundo mágico</h2>
+    <p>Confira a opinião de quem já viveu essa experiência mágica com a gente.</p>
+    <div class="clientes-grid">
+    <div class="card">
+      <img src="src/img/cliente1.jpg" alt="Cliente 1">
+      <h3>Maria Silva</h3>
+      <p>“Foi uma festa inesquecível, meus filhos amaram cada brinquedo!”</p>
+    </div>
+    
+    <div class="card">
+      <img src="src/img/cliente2.jpg" alt="Cliente 2">
+      <h3>João Pereira</h3>
+      <p>“Equipe super atenciosa e brinquedos de excelente qualidade.”</p>
+    </div>
+    
+    <div class="card">
+      <img src="src/img/cliente3.jpg" alt="Cliente 3">
+      <h3>Ana Souza</h3>
+      <p>“Segurança e diversão garantida, recomendo de olhos fechados.”</p>
+    </div>
+  </div>
+  </section>
 
-  <!-- Orçamento -->
-  <section id="orcamento">
-    <h2>Peça seu Orçamento</h2>
-    <form>
-      <input type="text" placeholder="Seu Nome" required>
-      <input type="email" placeholder="Seu Email" required>
-      <textarea placeholder="Mensagem" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+    <section id="orcamento">
+    <h2>Peça seu Orçamento</h2>
+    <form>
+      <input type="text" placeholder="Seu Nome" required>
+      <input type="email" placeholder="Seu Email" required>
+      <textarea placeholder="Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>&copy; 2025 Mundo Mágico CM - Todos os direitos reservados</p>
-  </footer>
+    <footer>
+    <p>&copy; 2025 Mundo Mágico CM - Todos os direitos reservados</p>
+  </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
