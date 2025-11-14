@@ -124,6 +124,8 @@ section {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .carrossel .card:hover {
@@ -137,23 +139,12 @@ section {
   border-radius: 15px 15px 0 0;
 }
 
-.carrossel .card h3,
-.carrossel .card p {
-  background: #379149;
-  color: #181717;
-  margin: 0;
-  padding: 10px;
-}
 
 .carrossel .card h3 {
   font-size: 1rem;
 }
 
-.carrossel .card p {
-  font-size: 0.85rem;
-  text-align: justify;
-  border-radius: 0 0 15px 15px;
-}
+
 
 /* BOTÕES */
 .btn {
@@ -278,7 +269,7 @@ html, body {
     width: 100%;
     padding: 10px 0;
   }
-}
+
 
 @media (max-width: 480px) {
   section {
@@ -337,4 +328,107 @@ html, body {
   .hamburger {
     display: none; /* esconde o ícone no desktop */
   }
+}
+
+/* --- ESTILOS PARA CARDS GERADOS PELA API (NOVAS CLASSES) --- */
+
+/* Estilo para o container da imagem */
+.carrossel .card .card-img {
+    width: 100%;
+    height: 150px; /* Mantém a mesma altura da imagem original */
+    overflow: hidden;
+}
+
+.carrossel .card .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Estilo para o container do conteúdo */
+.carrossel .card .card-content {
+    background: #379149; /* Fundo do seu tema */
+    color: #181717; /* Cor do seu texto */
+    padding: 10px;
+    display: flex; /* Garante que os itens de texto e botão se separem */
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Ajusta o padding dos elementos internos (H3 e P) */
+.carrossel .card .card-content h3,
+.carrossel .card .card-content p {
+    background: none; /* Remove o background duplo que você tinha */
+    padding: 0;
+    font-size: 1rem;
+    color: #181717;
+    margin: 5px 0;
+}
+
+.carrossel .card .card-content .description {
+    /* CHAVE: Define altura e limita as linhas para alinhar */
+    height: 60px; /* Altura para 3 linhas de texto */
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box; 
+     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; 
+    line-clamp: 3;
+    
+    /* Outros estilos */
+    font-size: 0.85rem;
+    color: #181717; 
+    line-height: 1.4;
+    margin: 5px 0 10px 0;
+    padding: 0;
+    background: none;
+}
+
+.carrossel .card .card-content .price {
+    font-weight: bold;
+    color: #205898; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    background: none;
+}
+
+.carrossel .card .card-content .btn-primary {
+    background: #205898;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+
+
+/* Estilo para o preço */
+.carrossel .card .card-content .price {
+    font-weight: bold;
+    color: #205898; /* Destaque o preço com a cor azul */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o botão */
+.carrossel .card .card-content .btn-primary {
+    background: #205898;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+.carrossel .card .card-content .btn-primary:hover {
+    background: #1a4373;
 }

@@ -81,3 +81,100 @@ window.addEventListener('resize', () => {
 
 // Garante que o carrossel se posicione corretamente ao carregar
 window.addEventListener('load', () => moveSlide(0));
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Busca o formulário dentro da seção #orcamento
+    const form = document.querySelector('#orcamento form');
+    
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            // 1. Coleta os dados do formulário
+            const nome = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const mensagem = this.querySelector('textarea').value;
+
+            const dadosOrcamento = {
+                nome: nome,
+                email: email,
+                mensagem: mensagem
+            };
+
+            // 2. Envia os dados para a API (Controller Java)
+            fetch('http://localhost:8099/api/orcamento', { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dadosOrcamento) 
+            })
+            .then(response => {
+                if (response.status === 201) { 
+                    alert('🎉 Orçamento enviado com sucesso! Em breve te daremos um retorno');
+                    form.reset(); 
+                } else {
+                    alert('❌ Erro ao enviar solicitação. Status: ' + response.status);
+                }
+            })
+            .catch(error => {
+                console.error('Erro de conexão:', error);
+                alert('⚠️ Não foi possível conectar ao servidor.');
+            });
+        });
+    }
+});
+
+// --- FUNÇÃO PARA CARREGAR E EXIBIR OS BRINQUEDOS ---
+
+function carregarBrinquedos() {
+    // 1. Faz a requisição GET para o endpoint que você acabou de testar
+    fetch('http://localhost:8099/api/brinquedos')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao carregar brinquedos: ' + response.statusText);
+            }
+            return response.json(); // Converte a resposta para JSON
+        })
+        .then(brinquedos => {
+            const container = document.querySelector('.carrossel'); // Onde os cards são exibidos
+            
+            if (!container) return; 
+            
+            container.innerHTML = ''; // Limpa os cards de exemplo (se houver)
+
+            // 2. Itera sobre a lista e cria um card HTML para cada brinquedo
+            brinquedos.forEach(brinquedo => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                
+                // Monta o HTML do card
+                card.innerHTML = `
+                    <div class="card-img">
+                        <img src="${brinquedo.imagemUrl}" alt="${brinquedo.nome}">
+                    </div>
+                    <div class="card-content">
+                        <h3>${brinquedo.nome}</h3>
+                        <p class="description">${brinquedo.descricao.substring(0, 70)}...</p>
+                        <p class="price">R$ ${brinquedo.precoPorHora.toFixed(2)} / hora</p>
+                        <button class="btn-primary">Adicionar ao Carrinho</button>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+
+            // Opcional: Recarrega a lógica do carrossel se necessário
+            // updateCarousel(); 
+        })
+        .catch(error => {
+            console.error('Falha ao buscar brinquedos da API:', error);
+            const container = document.querySelector('.card-container');
+            if (container) {
+                 container.innerHTML = '<p class="error-msg">Não foi possível carregar os brinquedos. Verifique o servidor.</p>';
+            }
+        });
+}
+
+// Garante que a função seja chamada quando a página carregar
+document.addEventListener('DOMContentLoaded', carregarBrinquedos);
