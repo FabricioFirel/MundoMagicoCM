@@ -7,11 +7,11 @@
 }
 
 body {
-  background: #379149;
+  
   color: #181717;
+  width: 100%;
 }
-
-/* CABEÇALHO */
+  
 header {
   display: flex;
   justify-content: space-between;
@@ -92,9 +92,12 @@ form button:hover {
 
 /* SEÇÕES GERAIS */
 section {
-  padding: 50px 20px;
+  padding: 30px 20px;
   text-align: center;
+  background-color: #379149;
 }
+
+
 
 /* 🌀 CARROSSEL */
 .carrossel-wrapper {
@@ -119,7 +122,7 @@ section {
 .carrossel .card {
   flex-shrink: 0;
   width: calc((100% - 25px * 4) / 5); /* 5 cards visíveis */
-  background: #205898;
+  background: #379149;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -205,6 +208,8 @@ section {
 html, body {
   width: 100%;
   overflow-x: hidden; /* evita scroll lateral */
+  background: #379149;
+  
 }
 
 .carrossel-wrapper {
@@ -328,6 +333,14 @@ html, body {
   .hamburger {
     display: none; /* esconde o ícone no desktop */
   }
+}
+
+
+footer {
+  background: #205898; /* A cor azul do seu header */
+  color: #fff; /* Texto em branco para contraste */
+  padding: 20px 70px; /* Adiciona espaçamento interno */
+  text-align: center;
 }
 
 /* --- ESTILOS PARA CARDS GERADOS PELA API (NOVAS CLASSES) --- */
