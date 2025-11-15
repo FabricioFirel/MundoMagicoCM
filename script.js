@@ -150,14 +150,14 @@ function carregarBrinquedos() {
                 
                 // Monta o HTML do card
                 card.innerHTML = `
-                    <div class="card-img">
-                        <img src="${brinquedo.imagemUrl}" alt="${brinquedo.nome}">
-                    </div>
-                    <div class="card-content">
-                        <h3>${brinquedo.nome}</h3>
-                        <p class="description">${brinquedo.descricao.substring(0, 70)}...</p>
-                        <p class="price">R$ ${brinquedo.precoPorHora.toFixed(2)} / hora</p>
-                        <button class="btn-primary">Adicionar ao Carrinho</button>
+                    <div class="card-img">
+                        <img src="${brinquedo.imagemUrl}" alt="${brinquedo.nome}">
+                    </div>
+                    <div class="card-content">
+                        <h3>${brinquedo.nome}</h3>
+                        <p class="description">${brinquedo.descricao.substring(0, 70)}...</p>
+                        <p class="price">R$ ${ (brinquedo.precoPorHora || 0).toFixed(2).replace('.', ',') } / hora</p>
+                        <buttonclass="btn-primary">Adicionar ao Carrinho</button>
                     </div>
                 `;
                 
