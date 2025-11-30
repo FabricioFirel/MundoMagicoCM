@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mundo Mágico CM</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/mundomagicomascote.png" alt="Mundo Mágico" class="brand-logo" />
+        <span class="brand-text">Mundo <strong>Mágico CM</strong></span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">&#9776;</button>
+
+      <nav class="site-nav" id="nav-list">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#brinquedos">Brinquedos</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#orcamento">Orçamento</a></li>
+          <li class="nav-cta"><a href="pages/login.html" class="btn btn-outline">Entrar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container">
+        <h1>Bem-vindo ao nosso mundo mágico</h1>
+        <p>Desde 2018 transformando momentos em memórias inesquecíveis — diversão segura e atendimento com carinho para sua festa ser perfeita.</p>
+       
+      </div>
+    </section>
+
+    <section id="inflaveis" class="section">
+    <div class="container">
+        <h2 class="section-title">Brinquedos Infláveis</h2>
+        <div class="carrossel-wrapper">
+            <div class="carrossel-container">
+                <div class="carrossel" id="inflaveis-carrossel">
+                    </div>
+            </div>
+            <button class="btn prev" onclick="moveSlide(-1, 'inflaveis-carrossel')" aria-label="Anterior">&#10094;</button>
+            <button class="btn next" onclick="moveSlide(1, 'inflaveis-carrossel')" aria-label="Próximo">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<section id="mesa" class="section light">
+    <div class="container">
+        <h2 class="section-title">Brinquedos de Mesa</h2>
+        <div class="carrossel-wrapper">
+            <div class="carrossel-container">
+                <div class="carrossel" id="mesa-carrossel">
+                    </div>
+            </div>
+            <button class="btn prev" onclick="moveSlide(-1, 'mesa-carrossel')" aria-label="Anterior">&#10094;</button>
+            <button class="btn next" onclick="moveSlide(1, 'mesa-carrossel')" aria-label="Próximo">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<section id="digitais" class="section">
+    <div class="container">
+        <h2 class="section-title">Brinquedos Digitais</h2>
+        <div class="carrossel-wrapper">
+            <div class="carrossel-container">
+                <div class="carrossel" id="digitais-carrossel">
+                    </div>
+            </div>
+            <button class="btn prev" onclick="moveSlide(-1, 'digitais-carrossel')" aria-label="Anterior">&#10094;</button>
+            <button class="btn next" onclick="moveSlide(1, 'digitais-carrossel')" aria-label="Próximo">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+    <section id="depoimentos" class="section light">
+      <div class="container">
+        <h2 class="section-title">O que nossos clientes dizem</h2>
+        <div class="clientes-grid" id="depoimentos-grid">
+          <div class="card testimonial">
+            <img src="img/cliente1.jpg" alt="Maria Silva">
+            <h3>Maria Silva</h3>
+            <p>“Foi uma festa inesquecível, meus filhos amaram cada brinquedo!”</p>
+          </div>
+          <div class="card testimonial">
+            <img src="img/cliente2.jpg" alt="João Pereira">
+            <h3>João Pereira</h3>
+            <p>“Equipe super atenciosa e brinquedos de excelente qualidade.”</p>
+          </div>
+          <div class="card testimonial">
+            <img src="img/cliente3.jpg" alt="Ana Souza">
+            <h3>Ana Souza</h3>
+            <p>“Segurança e diversão garantida, recomendo de olhos fechados.”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="orcamento" class="section">
+  <div class="container">
+    <h2 class="section-title">Cadastre-se para uma melhor experiência</h2>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="pages/register.html" class="btn" style="font-size: 1.1rem; padding: 12px 20px;">
+        Fazer Cadastro
+      </a>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Mundo Mágico CM - Todos os direitos reservados</p>
+
+  <script src="js/script.js"></script>
+  <script>
+    // liga o toggle do hamburger
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('nav-list').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

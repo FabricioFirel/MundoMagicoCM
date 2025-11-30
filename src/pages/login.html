@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login - Mundo Mágico</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="container" style="padding:40px 0">
+    <h2>Entrar</h2>
+    <form id="loginForm" style="max-width:420px;margin-top:18px">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="senha" placeholder="Senha" required style="margin-top:8px"/>
+      <div style="margin-top:12px">
+        <button type="submit" class="btn">Entrar</button>
+        <a href="register.html" class="btn btn-outline" style="margin-left:8px">Cadastrar</a>
+      </div>
+    </form>
+  </main>
+  <script>
+    const API_URL = "http://localhost:8099/api";
+    document.getElementById('loginForm').addEventListener('submit', async e=>{
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+      try{
+        const res = await fetch(`${API_URL}/auth/login`, {
+          method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email, senha})
+        });
+        if(!res.ok){ alert('Credenciais inválidas'); return; }
+        const user = await res.json();
+        localStorage.setItem('usuario', JSON.stringify(user));
+        if(user.role === 'ADMIN') location.href = '../admin.html';
+        else location.href = '../cliente.html';
+      }catch(err){ alert('Erro de conexão'); console.error(err) }
+    });
+  </script>
+</body>
+</html>
