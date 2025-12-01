@@ -1,6 +1,4 @@
-/* ============================================================
-    CONFIGURAÇÕES GERAIS E DADOS ESTÁTICOS
-============================================================ */
+
 
 // Dados Estáticos dos Brinquedos (Local)
 const staticBrinquedos = [
@@ -55,9 +53,6 @@ const CARD_CONFIG = [
 const carouselIndexMap = {}; 
 
 
-/* ============================================================
-    FUNÇÕES AUXILIARES DO CARROSSEL
-============================================================ */
 
 function getCardSettings() {
     const width = window.innerWidth;
@@ -94,9 +89,6 @@ function moveSlide(direction = 0, carouselId) {
     carousel.style.transform = `translateX(${offset}px)`;
 }
 
-/* ============================================================
-    FUNÇÃO DE RENDERIZAÇÃO E CARREGAMENTO (ESTÁTICO)
-============================================================ */
 
 // Função auxiliar para renderizar os cards em um contêiner específico
 function renderCards(brinquedos, containerId) {
@@ -151,9 +143,6 @@ function carregarBrinquedosCategorizados() {
 }
 
 
-/* ============================================================
-    FORMULÁRIO DE ORÇAMENTO (MANTIDO o stub para o caso de ser usado)
-============================================================ */
 
 function initFormOrcamento() {
     // Esta função não será executada, pois o formulário de orçamento não está mais na raiz do HTML
@@ -162,9 +151,6 @@ function initFormOrcamento() {
 }
 
 
-/* ============================================================
-    EVENTOS GERAIS
-============================================================ */
 
 // Reajustar todos os carrosséis no redimensionamento da janela
 window.addEventListener('resize', () => {
